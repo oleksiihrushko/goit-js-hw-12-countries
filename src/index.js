@@ -1,13 +1,12 @@
 import './styles.css';
 import '@pnotify/core/dist/BrightTheme.css';
-
-var _ = require('lodash');
+import lodash from 'lodash';
 import fetchCountries from './fetchCountries';
 
 const input = document.querySelector('.js-input');
 input.addEventListener(
   'input',
-  _.debounce(() => {
+  lodash.debounce(() => {
     fetchCountries(input.value);
   }, 300),
 );
